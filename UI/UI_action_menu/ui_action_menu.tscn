@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnqu4kgv7e1ek"]
+
+[ext_resource type="Script" path="res://UI/UI_action_menu/ui_action_menu.gd" id="1_uvvso"]
+
+[node name="UI_action_menu" type="Control"]
+layout_mode = 3
+anchor_top = 0.00154321
+anchor_right = 0.284722
+anchor_bottom = 0.53858
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uvvso")
+metadata/_edit_use_anchors_ = true
+
+[node name="name_label" type="Label" parent="."]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 151.0
+offset_bottom = 24.0
+text = "[ Name Battler]"

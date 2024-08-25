@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://btmhtuqk77hbo"]
+
+[ext_resource type="Script" path="res://ActiveTurnQueue.gd" id="1_274mx"]
+
+[node name="ActiveTurnQueue" type="Node"]
+script = ExtResource("1_274mx")

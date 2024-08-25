@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7l5kydgp0obv"]
+
+[ext_resource type="Script" path="res://UI/UI_action_menu/ui_action_list.gd" id="1_b6fe6"]
+[ext_resource type="PackedScene" uid="uid://bw82e7xn8wxyc" path="res://UI/UI_selection_arrow/UI_menu_selection_arrow.tscn" id="2_lrvcb"]
+
+[node name="UI_action_list" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b6fe6")
+
+[node name="UiMenuSelectionArrow" parent="." instance=ExtResource("2_lrvcb")]

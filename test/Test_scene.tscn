@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://7v524knn3d4e"]
+
+[ext_resource type="Script" path="res://test/Test_scene.gd" id="1_w2i61"]
+[ext_resource type="PackedScene" uid="uid://btmhtuqk77hbo" path="res://active_turn_queue.tscn" id="2_p8w5d"]
+[ext_resource type="PackedScene" uid="uid://rg8inqs7igth" path="res://test/test_ui.tscn" id="2_qeewg"]
+[ext_resource type="PackedScene" uid="uid://cbuo53rf0a4pt" path="res://battler.tscn" id="4_g7slh"]
+[ext_resource type="Resource" uid="uid://dvy4fhpen7i37" path="res://player_stats.tres" id="5_d58o6"]
+[ext_resource type="Resource" uid="uid://b7alg4iykwp5f" path="res://Punch.tres" id="5_f5rct"]
+[ext_resource type="Resource" uid="uid://c1dvdyagtjxxd" path="res://enemy_stats.tres" id="7_q1hgy"]
+
+[node name="TestScene" type="Node2D"]
+script = ExtResource("1_w2i61")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Test_UI" parent="CanvasLayer" instance=ExtResource("2_qeewg")]
+
+[node name="UI_History" parent="CanvasLayer/Test_UI" index="2"]
+anchors_preset = -1
+anchor_left = 0.653646
+anchor_top = 0.00154321
+offset_left = 0.0
+offset_top = 0.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ActiveTurnQueue" parent="." instance=ExtResource("2_p8w5d")]
+
+[node name="Player" parent="ActiveTurnQueue" instance=ExtResource("4_g7slh")]
+id = "player"
+stats = ExtResource("5_d58o6")
+actions = [ExtResource("5_f5rct"), ExtResource("5_f5rct")]
+is_party_member = true
+
+[node name="Enemy" parent="ActiveTurnQueue" instance=ExtResource("4_g7slh")]
+id = "enemy"
+stats = ExtResource("7_q1hgy")
+actions = [ExtResource("5_f5rct")]
+is_enemy = true
+
+[editable path="CanvasLayer/Test_UI"]

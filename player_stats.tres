@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BattlerStats" load_steps=2 format=3 uid="uid://dvy4fhpen7i37"]
+
+[ext_resource type="Script" path="res://BattlerStats.gd" id="1_ndjov"]
+
+[resource]
+script = ExtResource("1_ndjov")
+max_health = 80.0
+max_energy = 6
+base_attack = 12.0
+base_defense = 3.0
+base_speed = 55.0
+base_hit_chance = 100.0
+base_evasion = 10.0

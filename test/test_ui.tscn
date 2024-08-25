@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://rg8inqs7igth"]
+
+[ext_resource type="PackedScene" uid="uid://dch4vdwgptpya" path="res://test/ui_history.tscn" id="1_3u3fx"]
+[ext_resource type="Script" path="res://test/test_ui.gd" id="1_cp0le"]
+[ext_resource type="PackedScene" uid="uid://bnqu4kgv7e1ek" path="res://UI/UI_action_menu/ui_action_menu.tscn" id="3_h4ik5"]
+
+[node name="Test_UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cp0le")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerAttackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 131.0
+offset_right = 264.0
+offset_bottom = 200.0
+text = "Player Attack"
+
+[node name="UI_History" parent="." instance=ExtResource("1_3u3fx")]
+layout_mode = 1
+offset_left = 753.0
+offset_top = 1.0
+
+[node name="UI_action_menu" parent="." instance=ExtResource("3_h4ik5")]
+layout_mode = 1
+anchor_left = 0.384549
+anchor_top = 0.570988
+anchor_right = 0.539063
+anchor_bottom = 0.92284
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 0.0946181
+anchor_top = 0.0277778
+anchor_right = 0.234375
+anchor_bottom = 0.12037
+text = "Start Battle"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="PlayerAttackButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

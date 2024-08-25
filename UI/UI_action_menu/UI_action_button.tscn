@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxj2mbadm6ft1"]
+
+[ext_resource type="Texture2D" uid="uid://np7mu4ofknlm" path="res://UI/UI_action_menu/menu_action_bg.png" id="1_u0th8"]
+[ext_resource type="Texture2D" uid="uid://ttxw3g4wbdf8" path="res://UI/UI_action_menu/menu_action_bg_pressed.png" id="2_8h00s"]
+[ext_resource type="Texture2D" uid="uid://dp1bgjbvbli1u" path="res://UI/UI_action_menu/menu_action_bg_disabled.png" id="3_47p8i"]
+[ext_resource type="Texture2D" uid="uid://c082cb3ciu4ul" path="res://UI/UI_action_menu/menu_action_bg_focused.png" id="4_e4x8n"]
+[ext_resource type="Script" path="res://UI/UI_action_menu/UI_action_button.gd" id="5_mwni7"]
+
+[node name="UI_action_button" type="TextureButton"]
+custom_minimum_size = Vector2(334, 96)
+anchors_preset = -1
+anchor_right = 0.289931
+anchor_bottom = 0.148148
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_u0th8")
+texture_pressed = ExtResource("2_8h00s")
+texture_disabled = ExtResource("3_47p8i")
+texture_focused = ExtResource("4_e4x8n")
+script = ExtResource("5_mwni7")
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 16.0
+offset_right = -10.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(62, 62)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Action"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
